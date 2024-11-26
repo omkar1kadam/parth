@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "main";
+            grid-template-rows: 80px 1fr; /* Increased header height */
+            height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: relative;
+            height: 80px; /* Larger header */
+        }
+
+        header h1 {
+            font-size: 1.8rem; /* Larger header title */
+        }
+
+        /* Account Section */
+        .account-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .username {
+            margin-right: 20px; /* Increased space between name and logo */
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .account {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .account:hover {
+            transform: scale(1.1); /* Hover effect for the account logo */
+        }
+
+        .account img {
+            width: 50px; /* Slightly larger logo */
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 70px; /* Adjusted for larger header */
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 160px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            border-bottom: 1px solid #f4f4f9;
+        }
+
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f4f4f9;
+        }
+
+        /* Main Section */
+        main {
+            grid-area: main;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 20px 40px; /* Increased button size */
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05); /* Hover effect for buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="account-container">
+                <div class="username">John Doe</div>
+                <div class="account" onclick="toggleDropdown()">
+                    <img src="https://via.placeholder.com/50" alt="Account">
+                    <div class="dropdown" id="dropdownMenu">
+                        <a href="#">Profile</a>
+                        <a href="#">Change Password</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- Multiple Buttons -->
+            <button class="btn" onclick="alert('Button 1 Clicked')">Button 1</button>
+            <button class="btn" onclick="alert('Button 2 Clicked')">Button 2</button>
+            <button class="btn" onclick="alert('Button 3 Clicked')">Button 3</button>
+            <button class="btn" onclick="alert('Button 4 Clicked')">Button 4</button>
+            <button class="btn" onclick="alert('Button 5 Clicked')">Button 5</button>
+            <button class="btn" onclick="alert('Button 6 Clicked')">Button 6</button>
+        </main>
+    </div>
+    <script>
+        // Toggle the visibility of the dropdown menu
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Hide dropdown menu if clicked outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            const account = document.querySelector('.account-container');
+            if (!account.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

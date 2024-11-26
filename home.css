@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background: #EBEBEB;
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nav_logo {
+    height: 10.4vh;
+    width: 200px;
+    background: #43ccd1;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_college_name {
+    height: 10.4vh;
+    width: 100%;
+    background: #43ccd1;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+.nav_sppu_logo {
+    height: 10.4vh;
+    width: 200px;
+    background: #43ccd1;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 32vh;
+}
+.square-btn {
+    width: 13.02vw;
+    height: 23.15vh;
+    background-color: #646464;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.square-btn:hover {
+    background-color: #45a049;
+}
+
+.square-btn:focus {
+    outline: 2px solid #000;
+    outline-offset: 4px;
+}
